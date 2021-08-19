@@ -21,7 +21,7 @@ func startPprof(addr string) error {
 			}
 
 			pprof.StartCPUProfile(conn)
-			var buf [1]byte
+			var buf [4]byte
 			conn.Read(buf[:])
 			pprof.StopCPUProfile()
 			conn.Close()
